@@ -6,8 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from './src/screens/navigation/types';
 
 // Écrans
-import HomeScreen from './src/screens/screens/HomeScreen';
-import SettingsScreen from './src/screens/screens/SettingsScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
 
 // Création du Stack Navigator typé
 const Stack = createNativeStackNavigator<RootStackParamList>();
