@@ -2,8 +2,9 @@ import { StyleSheet, StatusBar, Platform } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    flexDirection:"column",
     alignItems: "center",
+    justifyContent: "space-around",
     backgroundColor: "ghostwhite",
     ...Platform.select({
       ios: { paddingTop: 20 },
@@ -11,11 +12,14 @@ export default StyleSheet.create({
     }),
   },
   box: {
-    width: 100,
+    width: 300,
     height: 100,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "lightgray",
+    borderWidth:1,
+    borderStyle:"dashed",
+    borderColor:"darkslategray"
   },
   boxText: {
     color: "darkslategray",
