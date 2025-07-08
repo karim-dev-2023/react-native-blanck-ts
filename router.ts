@@ -1,4 +1,5 @@
-export type RootesParams = {
+export type Routes = {
   Home: undefined;
-  Details: { title: string; stock: number; content: string };
+  News: undefined;
+  Settings: undefined;
 };

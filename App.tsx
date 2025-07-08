@@ -1,35 +1,31 @@
-import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Platform } from "react-native";
 import Home from "./components/Home";
-import Details from "./components/Details";
-// import Settings from "./components/Settings";
-import { RootesParams } from "./router";
-import { Button } from "react-native";
+import News from "./components/News";
+import Settings from "./components/Settings";
+import { Routes } from "./router";
 
-const Stack = createNativeStackNavigator<RootesParams>();
+const Tab = createBottomTabNavigator<Routes>();
+const Drawer = createDrawerNavigator<Routes>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen
-          name="Details"
-          component={Details}
-          options={({ route }) => ({
-            headerRight: () => {
-              return (
-                <Button
-                  title="Buy"
-                  onPress={() => {}}
-                  disabled={route.params.stock === 0}
-                />
-              );
-            },
-          })}
-        />
-      </Stack.Navigator>
+      {Platform.OS === "ios" && (
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="News" component={News} />
+          <Tab.Screen name="Settings" component={Settings} />
+        </Tab.Navigator>
+      )}
+      {Platform.OS === "android" && (
+        <Drawer.Navigator>
+          <Drawer.Screen name="Home" component={Home} />
+          <Drawer.Screen name="News" component={News} />
+          <Drawer.Screen name="Settings" component={Settings} />
+        </Drawer.Navigator>
+      )}
     </NavigationContainer>
   );
 }
