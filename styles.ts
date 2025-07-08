@@ -2,11 +2,12 @@ import { StyleSheet, StatusBar, Platform } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    flexDirection:"column",
+    justifyContent: "space-around",
     alignItems: "center",
     backgroundColor: "ghostwhite",
     ...Platform.select({
-      ios: { paddingTop: 20 },
+      ios: { paddingTop: 40 },
       android: { paddingTop: StatusBar.currentHeight },
     }),
   },
