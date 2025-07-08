@@ -2,7 +2,7 @@ import React from "react";
 import { StatusBar, View } from "react-native";
 import styles from "./styles";
 import Box from "./components/Box";
-const boxes = new Array(3).fill(null).map((v, i) => i + 1);
+const boxes = new Array(10).fill(null).map((v, i) => i + 1);
 
 export default function App() {
   return (
